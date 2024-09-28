@@ -12,14 +12,13 @@ public class Ingredients : MonoBehaviour
         pbm = FindAnyObjectByType<PerfectBuildMinigame>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
-    {for (int i = 0; i < pbm.previousIngredient.Count; i++)
-        {
-            if (collision.gameObject.name == pbm.previousIngredient[i].name)
-            {
-                pbm.points++;
-                pbm.previousIngredient.Add(this.gameObject);
-                Destroy(this.GetComponent<Ingredients>());
-            }
-        }
+    {
+      if (collision.gameObject.name == pbm.previousIngredient[pbm.previousIngredient.Count - 1].name)
+      {
+          pbm.points++;
+          pbm.previousIngredient.Add(this.gameObject);
+          Destroy(this.GetComponent<Ingredients>());
+      }
+        
     }
 }

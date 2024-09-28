@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PerfectBuildMinigame : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class PerfectBuildMinigame : MonoBehaviour
     [SerializeField] private int count = 0;
     public int points;
     [SerializeField] private TMP_Text txt;
+    private float time = 0;
+    private bool timer;
 
 
 
@@ -38,9 +41,18 @@ public class PerfectBuildMinigame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        txt.text = txt.text + " " + points;
+
+        if(time > 0)
+        {
+            time -= Time.deltaTime;
+        }
+        if(time <= 0 && timer)
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
 
 
+        txt.text = "Points: " + points;
         if (currentIngredient)
         {
             float movement = Time.deltaTime * speed * direction;
@@ -78,9 +90,18 @@ public class PerfectBuildMinigame : MonoBehaviour
                 speed = 4;
                 canPlay = false;
                 currentIngredient.gameObject.SetActive(false);
+
             }
 
         }
+        
+        if(count >= ingredients.Count && !timer)
+        {
+            timer = true;
+            time = 5;
+            print("end" + time);
+        }
+
         for (int i = 0; i < previousIngredient.Count; i++) {
             if (previousIngredient[i].transform.position.y < baseObject.transform.position.y)
             {
@@ -93,10 +114,12 @@ public class PerfectBuildMinigame : MonoBehaviour
 
     void spawnNewIngredient()
     {
+        
         currentIngredient = Instantiate(ingredients[count].transform, spawnPoint);
         currentIngredient.transform.position = spawnPosition;
         currentRigidBody = currentIngredient.GetComponent<Rigidbody2D>();
         speed += speedIncrease;
+        baseObject.transform.localScale = new Vector3(baseObject.transform.localScale.x - 1.5f, 0.1f, 1);
 
     }
 }
