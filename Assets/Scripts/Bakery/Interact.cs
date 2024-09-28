@@ -22,12 +22,12 @@ public class Interact : MonoBehaviour
     {
         if (this.name == "NPC")
         {
-            if (pI.task == false)
+            if (BakeryManager.instance.tasks == false)
             {
                 pI.tasks.setTask(task);
-                pI.task = true;
+                BakeryManager.instance.tasks = true;
             }
-            else if (pI.taskMark == true && pI.task == true)
+            else
             {
                 pI.tasks.endTask();
             }
@@ -36,7 +36,7 @@ public class Interact : MonoBehaviour
 
         if(this.name == "Oven")
         {
-            if (pI.task)
+            if (BakeryManager.instance.tasks)
             {
                 StartCoroutine(load());   
             }

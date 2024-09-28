@@ -48,6 +48,7 @@ public class PerfectBuildMinigame : MonoBehaviour
         }
         if(time <= 0 && timer)
         {
+            BakeryManager.instance.score = points;
             SceneManager.LoadScene("SampleScene");
         }
 
@@ -100,6 +101,7 @@ public class PerfectBuildMinigame : MonoBehaviour
             timer = true;
             time = 5;
             print("end" + time);
+            
         }
 
         for (int i = 0; i < previousIngredient.Count; i++) {

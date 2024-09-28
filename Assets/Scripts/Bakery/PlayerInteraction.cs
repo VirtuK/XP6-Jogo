@@ -10,7 +10,6 @@ public class PlayerInteraction : MonoBehaviour
     private GameObject previousHit;
     [SerializeField] private GameObject txt;
     public bool taskMark = false;
-    public bool task;
     public Tasks tasks;
 
     void Update()
