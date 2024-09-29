@@ -14,7 +14,8 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        Vector3 player = new Vector3(this.transform.position.x, this.transform.position.y + 1.5f, this.transform.position.z - .5f);
+        Ray ray = new Ray(player, cam.transform.forward * 2);
         Debug.DrawRay(ray.origin, ray.direction * distance);
         RaycastHit hit;
         if(Physics.Raycast(ray, out hit, distance))

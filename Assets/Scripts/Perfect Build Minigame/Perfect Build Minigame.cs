@@ -122,7 +122,7 @@ public class PerfectBuildMinigame : MonoBehaviour
         currentIngredient.transform.position = spawnPosition;
         currentRigidBody = currentIngredient.GetComponent<Rigidbody2D>();
         speed += speedIncrease;
-        baseObject.transform.localScale = new Vector3(baseObject.transform.localScale.x - 1.5f, 0.1f, 1);
+        baseObject.transform.localScale = new Vector3(baseObject.transform.localScale.x - 1.625f, 0.1f, 1);
 
     }
 }
