@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PerfectBuildMinigame : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> ingredients;
+    
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject baseObject;
     public List<GameObject> previousIngredient = new List<GameObject>();
@@ -48,12 +48,13 @@ public class PerfectBuildMinigame : MonoBehaviour
         }
         if(time <= 0 && timer)
         {
+            BakeryManager.instance.deliverTask = true;
             BakeryManager.instance.score = points;
             SceneManager.LoadScene("SampleScene");
         }
 
 
-        txt.text = "Points: " + points;
+        txt.text = "Pontos: " + points;
         if (currentIngredient)
         {
             float movement = Time.deltaTime * speed * direction;
@@ -69,11 +70,11 @@ public class PerfectBuildMinigame : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 count++;
-                if (count <= ingredients.Count)
+                if (count <= BakeryManager.instance.ingredients.Count)
                 {
                     currentIngredient = null;
                     currentRigidBody.simulated = true;
-                    if (count < ingredients.Count)
+                    if (count < BakeryManager.instance.ingredients.Count)
                     {
                         spawnNewIngredient();
                     }
@@ -86,7 +87,7 @@ public class PerfectBuildMinigame : MonoBehaviour
                 }
                 
             }
-            if (count > ingredients.Count)
+            if (count > BakeryManager.instance.ingredients.Count)
             {
                 speed = 4;
                 canPlay = false;
@@ -96,7 +97,7 @@ public class PerfectBuildMinigame : MonoBehaviour
 
         }
         
-        if(count >= ingredients.Count && !timer)
+        if(count >= BakeryManager.instance.ingredients.Count && !timer)
         {
             timer = true;
             time = 5;
@@ -117,7 +118,7 @@ public class PerfectBuildMinigame : MonoBehaviour
     void spawnNewIngredient()
     {
         
-        currentIngredient = Instantiate(ingredients[count].transform, spawnPoint);
+        currentIngredient = Instantiate(BakeryManager.instance.ingredients[count].transform, spawnPoint);
         currentIngredient.transform.position = spawnPosition;
         currentRigidBody = currentIngredient.GetComponent<Rigidbody2D>();
         speed += speedIncrease;

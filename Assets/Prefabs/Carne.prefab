@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5352378093575279693}
   - component: {fileID: 2931174620846185984}
   - component: {fileID: 6028040159531172307}
-  - component: {fileID: -4240975029059190180}
+  - component: {fileID: -8274730573610339320}
   m_Layer: 0
-  m_Name: Ingredients
+  m_Name: Carne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.39534, y: 1, z: 1}
+  m_LocalScale: {x: 3.7360392, y: 0.425, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
-  m_Color: {r: 0.7921569, g: 0.47258696, b: 0, a: 1}
+  m_Color: {r: 0.3301887, g: 0.108897, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -163,7 +163,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &-4240975029059190180
+--- !u!114 &-8274730573610339320
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

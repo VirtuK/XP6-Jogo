@@ -6,9 +6,11 @@ public class BakeryManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static BakeryManager instance;
-    public string lastTask;
+    public string lastTask = null;
     public bool tasks;
     public int score;
+    public bool deliverTask;
+    public List<GameObject> ingredients;
 
     private void Awake()
     {

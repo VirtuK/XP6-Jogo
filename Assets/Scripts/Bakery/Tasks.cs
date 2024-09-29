@@ -8,7 +8,7 @@ public class Tasks : MonoBehaviour
     [SerializeField] private TMP_Text txt;
     [SerializeField] private TMP_Text scoreMessage;
 
-    private void Awake()
+    private void Start()
     {
        if(BakeryManager.instance.lastTask != null)
         {
@@ -25,6 +25,7 @@ public class Tasks : MonoBehaviour
     {
         BakeryManager.instance.lastTask = null;
         BakeryManager.instance.tasks = false;
+        BakeryManager.instance.deliverTask = false;
         scoreMessage.gameObject.SetActive(true);
         scoreMessage.text = "Parabéns você completou esse pedido com " + BakeryManager.instance.score
             + " Pontos.";
