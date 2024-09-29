@@ -9,6 +9,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private float distance = 3f;
     private GameObject previousHit;
     [SerializeField] private GameObject txt;
+    
     public bool taskMark = false;
     public Tasks tasks;
 

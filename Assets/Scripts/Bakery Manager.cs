@@ -6,6 +6,7 @@ public class BakeryManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static BakeryManager instance;
+    public bool started = false;
     public string lastTask = null;
     public bool tasks;
     public int score;
