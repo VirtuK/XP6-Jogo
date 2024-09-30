@@ -2618,7 +2618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33871aad08a489c41b33a2f534bada1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSense: 3
+  mouseSense: 1.5
   walkSpeed: 6
   characterController: {fileID: 1121754770}
   canMove: 0
