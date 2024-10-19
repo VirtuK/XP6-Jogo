@@ -15,6 +15,7 @@ public class Interact : MonoBehaviour
     public GameObject ingredient;
     private PlayerInteraction pI;
     private bool used;
+    [SerializeField] private NPCManager NPCManager;
 
     private void Start()
     {
@@ -32,6 +33,7 @@ public class Interact : MonoBehaviour
             else
             {
                 pI.tasks.endTask();
+                NPCManager.randomizeNPC();
             }
         }
 
