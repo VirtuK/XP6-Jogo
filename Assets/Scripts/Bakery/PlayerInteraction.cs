@@ -29,7 +29,14 @@ public class PlayerInteraction : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    hit.collider.GetComponent<Interact>().OnInteract();
+                    if (hit.collider.tag != "Ingredient")
+                    {
+                        hit.collider.GetComponent<Interact>().OnInteract(hit.collider.gameObject.name);
+                    }
+                    else
+                    {
+                        hit.collider.GetComponent<Interact>().OnInteract(hit.collider.gameObject.tag);
+                    }
                     
                 }
                 if (hit.collider.name != "NPC")

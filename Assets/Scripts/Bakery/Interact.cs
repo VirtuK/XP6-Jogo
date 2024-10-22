@@ -15,60 +15,67 @@ public class Interact : MonoBehaviour
     public GameObject ingredient;
     private PlayerInteraction pI;
     private bool used;
-    [SerializeField] private NPCManager NPCManager;
+    private NPCManager NPCManager;
 
     private void Start()
     {
         pI = FindFirstObjectByType<PlayerInteraction>();
+        NPCManager = FindFirstObjectByType<NPCManager>();
     }
-    public void OnInteract()
+    public void OnInteract(string name)
     {
-        if (this.name == "NPC")
-        {
-            if (BakeryManager.instance.tasks == false)
-            {
-                pI.tasks.setTask(task);
-                BakeryManager.instance.tasks = true;
-            }
-            else
-            {
-                pI.tasks.endTask();
-                NPCManager.randomizeNPC();
-            }
-        }
 
-
-        if(this.name == "Oven")
+        switch (name)
         {
-            if (BakeryManager.instance.deliverTask)
+            case "NPC":
             {
-                Message("O pedido já está pronto, entregue-o");
+                    if (BakeryManager.instance.tasks == false)
+                    {
+                        pI.tasks.setTask(task);
+                        BakeryManager.instance.tasks = true;
+                        BakeryManager.instance.npcPosition = new Vector3(-1.5f, 1.13f, 2.5f);
+                    }
+                    else
+                    {
+                        pI.tasks.endTask();
+                        this.GetComponent<Animator>().SetBool("exit", true);
+                        BakeryManager.instance.entered = false;
+                    }
+                    break;
             }
-            else if (BakeryManager.instance.tasks && BakeryManager.instance.ingredients.Count > 0)
-            {
-                StartCoroutine(load());   
-            }
-            else if(BakeryManager.instance.tasks && BakeryManager.instance.ingredients.Count <= 0)
-            {
-                Message("Nenhum ingrediente foi selecionado");
-            }
-            else
-            {
-                Message("Nenhum pedido deve ser realizado no momento");
-            }
-        }
-
-        if(this.tag == "Ingredient")
-        {
-            if (BakeryManager.instance.ingredients.Count < 5)
-            {
-                IngredientSelector selector = FindAnyObjectByType<IngredientSelector>();
-                selector.SelectIngredient(ingredient);
-            }
-            else
-            {
-                Message("5 Ingredientes já foram selecionados");
-            }
+            case "Oven":
+                {
+                    if (BakeryManager.instance.deliverTask)
+                    {
+                        Message("O pedido já está pronto, entregue-o");
+                    }
+                    else if (BakeryManager.instance.tasks && BakeryManager.instance.ingredients.Count > 0)
+                    {
+                        StartCoroutine(load());
+                    }
+                    else if (BakeryManager.instance.tasks && BakeryManager.instance.ingredients.Count <= 0)
+                    {
+                        Message("Nenhum ingrediente foi selecionado");
+                    }
+                    else
+                    {
+                        Message("Nenhum pedido deve ser realizado no momento");
+                    }
+                    break;
+                }
+            case "Ingredient":
+                {
+                    if (BakeryManager.instance.ingredients.Count < 5)
+                    {
+                        IngredientSelector selector = FindAnyObjectByType<IngredientSelector>();
+                        selector.SelectIngredient(ingredient);
+                    }
+                    else
+                    {
+                        Message("5 Ingredientes já foram selecionados");
+                    }
+                    break;
+                }
         }
     }
 
@@ -90,5 +97,10 @@ public class Interact : MonoBehaviour
         txt.GetComponent<TMP_Text>().text = msg;
         txt.SetActive(true);
         StartCoroutine(fadeText());
+    }
+
+    public void FinishAnimation()
+    {
+        NPCManager.randomizeNPC();
     }
 }
