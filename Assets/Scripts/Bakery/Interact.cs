@@ -16,6 +16,7 @@ public class Interact : MonoBehaviour
     private PlayerInteraction pI;
     private bool used;
     private NPCManager NPCManager;
+    [SerializeField] List<GameObject> ingredients = new List<GameObject>();
 
     private void Start()
     {
@@ -34,6 +35,7 @@ public class Interact : MonoBehaviour
                         pI.tasks.setTask(task);
                         BakeryManager.instance.tasks = true;
                         BakeryManager.instance.npcPosition = new Vector3(-1.5f, 1.13f, 2.5f);
+                        BakeryManager.instance.NPCingredients = ingredients;
                     }
                     else
                     {

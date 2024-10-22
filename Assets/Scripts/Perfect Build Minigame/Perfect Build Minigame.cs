@@ -35,6 +35,17 @@ public class PerfectBuildMinigame : MonoBehaviour
     {
         spawnNewIngredient();
         canPlay = true;
+        for(int i = 0; i < BakeryManager.instance.NPCingredients.Count; i++)
+        {
+            if (BakeryManager.instance.NPCingredients[i] == BakeryManager.instance.ingredients[i])
+            {
+                points++;
+            }
+            else
+            {
+                points--;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -66,7 +77,7 @@ public class PerfectBuildMinigame : MonoBehaviour
         }
         if (canPlay)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && count < BakeryManager.instance.ingredients.Count)
             {
                 count++;
                 if (count <= BakeryManager.instance.ingredients.Count)

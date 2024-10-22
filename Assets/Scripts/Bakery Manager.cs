@@ -19,6 +19,7 @@ public class BakeryManager : MonoBehaviour
     public Vector3 npcPosition = Vector3.zero;
     public bool entered = false;
     public GameObject npc;
+    public List<GameObject> NPCingredients;
 
     //Ingredientes que foram salvos
     public List<GameObject> ingredients;
