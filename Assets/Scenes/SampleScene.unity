@@ -245,6 +245,7 @@ MonoBehaviour:
   highlight: {fileID: 2100000, guid: b0455306c31a5ce44814758249429d61, type: 2}
   txt: {fileID: 1115182457}
   ingredient: {fileID: 0}
+  ingredients: []
 --- !u!1 &172569360
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,6 +2194,7 @@ MonoBehaviour:
   txt: {fileID: 1115182457}
   ingredient: {fileID: 2765928378468872030, guid: 3220f28d0da57d64586f4587d4601e90,
     type: 3}
+  ingredients: []
 --- !u!65 &1045572729
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2791,6 +2793,7 @@ MonoBehaviour:
   txt: {fileID: 1115182457}
   ingredient: {fileID: 2765928378468872030, guid: 8621798a8bd8b1646b50f733b6d4d4bf,
     type: 3}
+  ingredients: []
 --- !u!65 &1160444623
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3068,6 +3071,7 @@ MonoBehaviour:
   txt: {fileID: 1115182457}
   ingredient: {fileID: 2765928378468872030, guid: 9339227e45886014589f70bee47ded28,
     type: 3}
+  ingredients: []
 --- !u!65 &1265690183
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3806,6 +3810,7 @@ MonoBehaviour:
   txt: {fileID: 1115182457}
   ingredient: {fileID: 2765928378468872030, guid: 48c7d3471cfa6914d9c77d92c78e7f99,
     type: 3}
+  ingredients: []
 --- !u!65 &1785121907
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4417,6 +4422,8 @@ MonoBehaviour:
   deliverTask: 0
   npcPosition: {x: 0, y: 0, z: 0}
   entered: 0
+  npc: {fileID: 0}
+  NPCingredients: []
   ingredients: []
 --- !u!4 &2101657179
 Transform:
