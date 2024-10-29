@@ -37,5 +37,6 @@ public class Tasks : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         scoreMessage.gameObject.SetActive(false);
+        BakeryManager.instance.score = 0;
     }
 }

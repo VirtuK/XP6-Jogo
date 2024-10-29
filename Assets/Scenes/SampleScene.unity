@@ -2299,9 +2299,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcs:
   - {fileID: 8867097352670436032, guid: cde50b5d91a61924cbabdff26ea571bd, type: 3}
-  - {fileID: 8867097352670436032, guid: cde50b5d91a61924cbabdff26ea571bd, type: 3}
-  - {fileID: 8867097352670436032, guid: cde50b5d91a61924cbabdff26ea571bd, type: 3}
-  - {fileID: 8867097352670436032, guid: cde50b5d91a61924cbabdff26ea571bd, type: 3}
+  - {fileID: 888774824925751824, guid: 71be078fce3395b4ca366c61a3932688, type: 3}
+  - {fileID: 4008908861559899641, guid: 9d06a257b7049044481acfabd54502e6, type: 3}
+  - {fileID: 4499513259223421299, guid: 8b2cad7ba4f34ba47b3e4f7fc48dffef, type: 3}
   npc: {fileID: 0}
   start: 0
   finish: 0

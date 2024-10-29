@@ -233,11 +233,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: "IRM\xC3O, ME VE MEU PEDIDO AI"
-  task: Um sanduiche
+  task: "1 P\xE3o"
   normal: {fileID: 2100000, guid: 67d8cd26a20ed6f4c9235c72b3b8992c, type: 2}
   highlight: {fileID: 2100000, guid: 67d8cd26a20ed6f4c9235c72b3b8992c, type: 2}
   txt: {fileID: 0}
   ingredient: {fileID: 0}
+  ingredients:
+  - {fileID: 2765928378468872030, guid: 8621798a8bd8b1646b50f733b6d4d4bf, type: 3}
 --- !u!95 &262050180451310929
 Animator:
   serializedVersion: 7

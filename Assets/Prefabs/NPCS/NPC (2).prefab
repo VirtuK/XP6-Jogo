@@ -340,11 +340,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: "IRM\xC3O, ME VE MEU PEDIDO AI"
-  task: "Um p\xE3o"
+  task: Carne e um monte de queijo
   normal: {fileID: 2100000, guid: 67d8cd26a20ed6f4c9235c72b3b8992c, type: 2}
   highlight: {fileID: 2100000, guid: 67d8cd26a20ed6f4c9235c72b3b8992c, type: 2}
   txt: {fileID: 0}
   ingredient: {fileID: 0}
+  ingredients:
+  - {fileID: 2765928378468872030, guid: 9339227e45886014589f70bee47ded28, type: 3}
+  - {fileID: 2765928378468872030, guid: 48c7d3471cfa6914d9c77d92c78e7f99, type: 3}
+  - {fileID: 2765928378468872030, guid: 48c7d3471cfa6914d9c77d92c78e7f99, type: 3}
+  - {fileID: 2765928378468872030, guid: 48c7d3471cfa6914d9c77d92c78e7f99, type: 3}
+  - {fileID: 2765928378468872030, guid: 48c7d3471cfa6914d9c77d92c78e7f99, type: 3}
 --- !u!95 &5884871578187342054
 Animator:
   serializedVersion: 7
