@@ -26,6 +26,7 @@ public class Tasks : MonoBehaviour
         BakeryManager.instance.lastTask = null;
         BakeryManager.instance.tasks = false;
         BakeryManager.instance.deliverTask = false;
+        BakeryManager.instance.taskCount++;
         scoreMessage.gameObject.SetActive(true);
         scoreMessage.text = "Você completou esse pedido com " + BakeryManager.instance.score
             + " Pontos.";

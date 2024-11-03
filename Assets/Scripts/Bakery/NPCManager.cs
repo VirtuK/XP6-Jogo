@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
 using Unity.Jobs;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class NPCManager : MonoBehaviour
 {
@@ -33,7 +36,9 @@ public class NPCManager : MonoBehaviour
         }
         else
         {
-            npc = GameObject.Instantiate(BakeryManager.instance.npc, BakeryManager.instance.npcPosition, Quaternion.identity);
+            npc = GameObject.Instantiate(BakeryManager.instance.npc, BakeryManager.instance.npcPosition, new Quaternion(0,180,0,1));
+            npc.GetComponent<Animator>().SetBool("idle", true);
+            
         }
         if (!BakeryManager.instance.entered)
         {

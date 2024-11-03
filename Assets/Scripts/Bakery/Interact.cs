@@ -34,12 +34,13 @@ public class Interact : MonoBehaviour
                     {
                         pI.tasks.setTask(task);
                         BakeryManager.instance.tasks = true;
-                        BakeryManager.instance.npcPosition = new Vector3(-1.5f, 1.13f, 2.5f);
+                        BakeryManager.instance.npcPosition = new Vector3(-1.5f, 0f, 2.5f);
                         BakeryManager.instance.NPCingredients = ingredients;
                     }
                     else
                     {
                         pI.tasks.endTask();
+                        this.GetComponent<Animator>().SetBool("idle", false);
                         this.GetComponent<Animator>().SetBool("exit", true);
                         BakeryManager.instance.entered = false;
                     }
@@ -104,5 +105,10 @@ public class Interact : MonoBehaviour
     public void FinishAnimation()
     {
         NPCManager.randomizeNPC();
+    }
+
+    public void Idle()
+    {
+        GetComponent<Animator>().SetBool("idle", true);
     }
 }

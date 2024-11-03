@@ -13,6 +13,7 @@ public class BakeryManager : MonoBehaviour
     public bool tasks;
     public int score;
     public bool deliverTask;
+    public bool finished;
 
 
     //Variaveis dos NPCs
@@ -20,6 +21,9 @@ public class BakeryManager : MonoBehaviour
     public bool entered = false;
     public GameObject npc;
     public List<GameObject> NPCingredients;
+
+    //Contador de pedidos
+    public int taskCount;
 
     //Ingredientes que foram salvos
     public List<GameObject> ingredients;
@@ -34,5 +38,24 @@ public class BakeryManager : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void ResetValues()
+    {
+        started = false;
+        lastTask = null;
+        tasks = false;
+        score = 0;
+        deliverTask = false;
+        finished = false;
+
+        npcPosition = Vector3.zero;
+        entered = false;
+        npc = null;
+        NPCingredients.Clear();
+
+        taskCount = 0;
+
+        ingredients.Clear();
     }
 }
