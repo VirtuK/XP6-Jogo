@@ -150,17 +150,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: "IRM\xC3O, ME VE MEU PEDIDO AI"
-  task: Um sanduiche
-  normal: {fileID: 2100000, guid: d26c1fd44f6d24d4faf27a0aff751a4d, type: 2}
-  highlight: {fileID: 2100000, guid: d26c1fd44f6d24d4faf27a0aff751a4d, type: 2}
+  task: {fileID: 21300000, guid: e97aacdbd8dfedf459cb72425f17e72b, type: 3}
   txt: {fileID: 0}
   ingredient: {fileID: 0}
   ingredients:
   - {fileID: 2765928378468872030, guid: 8621798a8bd8b1646b50f733b6d4d4bf, type: 3}
   - {fileID: 2765928378468872030, guid: 9339227e45886014589f70bee47ded28, type: 3}
-  - {fileID: 2765928378468872030, guid: 48c7d3471cfa6914d9c77d92c78e7f99, type: 3}
   - {fileID: 2765928378468872030, guid: 3220f28d0da57d64586f4587d4601e90, type: 3}
+  ingredients2:
   - {fileID: 2765928378468872030, guid: 8621798a8bd8b1646b50f733b6d4d4bf, type: 3}
+  - {fileID: 2765928378468872030, guid: 9339227e45886014589f70bee47ded28, type: 3}
+  - {fileID: 2765928378468872030, guid: 9339227e45886014589f70bee47ded28, type: 3}
+  - {fileID: 2765928378468872030, guid: 9339227e45886014589f70bee47ded28, type: 3}
+  - {fileID: 2765928378468872030, guid: 3220f28d0da57d64586f4587d4601e90, type: 3}
+  ingredients3:
+  - {fileID: 2765928378468872030, guid: 8621798a8bd8b1646b50f733b6d4d4bf, type: 3}
+  - {fileID: 2765928378468872030, guid: 3220f28d0da57d64586f4587d4601e90, type: 3}
 --- !u!65 &5237702100795906445
 BoxCollider:
   m_ObjectHideFlags: 0

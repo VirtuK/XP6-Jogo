@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
             canMove = false;
             finishScreen.SetActive(true);
             BakeryManager.instance.started = false;
-            BakeryManager.instance.finished = false;
+            BakeryManager.instance.finished = true;
         }
 
         if (BakeryManager.instance.finished)

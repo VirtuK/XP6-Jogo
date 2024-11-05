@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3157882907653983874}
   - component: {fileID: 5352378093575279693}
   - component: {fileID: 6028040159531172307}
-  - component: {fileID: -2203310032062361774}
-  - component: {fileID: 5808496280162999347}
+  - component: {fileID: -7019015762446765031}
+  - component: {fileID: 2750371661177917768}
   m_Layer: 0
-  m_Name: Queijo
+  m_Name: "P\xE3o - Cima"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.4165285, y: 2.0786262, z: 0.8409}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4, y: 3.6685028, z: 3.0292559}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -78,9 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224,
-    type: 3}
-  m_Color: {r: 1, g: 0.9027058, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: dd2a7cb8122ab524aa4684880d651b9e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -117,7 +116,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &-2203310032062361774
+--- !u!114 &-7019015762446765031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf398f6b09a053148a41c225d2354114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!60 &5808496280162999347
+--- !u!60 &2750371661177917768
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,7 +165,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -175,7 +174,24 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
+    - - {x: 0.21871185, y: 0.024131209}
+      - {x: 0.14980747, y: 0.085962966}
+      - {x: 0.11793019, y: 0.10208162}
+      - {x: 0.083208025, y: 0.12061059}
+      - {x: -0.09375, y: 0.11749899}
+      - {x: -0.1397787, y: 0.107655466}
+      - {x: -0.17676863, y: 0.08677762}
+      - {x: -0.24590096, y: 0.013905484}
+      - {x: -0.26711035, y: -0.020309955}
+      - {x: -0.262001, y: -0.07397944}
+      - {x: -0.21995327, y: -0.11942614}
+      - {x: -0.11998766, y: -0.11942615}
+      - {x: 0.010738976, y: -0.11913465}
+      - {x: 0.10059254, y: -0.11815467}
+      - {x: 0.19805443, y: -0.117091686}
+      - {x: 0.21019483, y: -0.10208164}
+      - {x: 0.22194667, y: -0.09129087}
+      - {x: 0.24264808, y: -0.07427066}
+      - {x: 0.24082425, y: -0.01771066}
+      - {x: 0.22497353, y: -0.007293362}
   m_UseDelaunayMesh: 0

@@ -8,20 +8,23 @@ using UnityEngine.SceneManagement;
 public class Interact : MonoBehaviour
 {
     public string message;
-    public string task;
-    public Material normal;
-    public Material highlight;
+    public Sprite task;
     public GameObject txt;
     public GameObject ingredient;
     private PlayerInteraction pI;
-    private bool used;
     private NPCManager NPCManager;
     [SerializeField] List<GameObject> ingredients = new List<GameObject>();
+    [SerializeField] List<GameObject> ingredients2 = new List<GameObject>();
+    [SerializeField] List<GameObject> ingredients3 = new List<GameObject>();
+    private List<List<GameObject>> options = new List<List<GameObject>>();
 
     private void Start()
     {
         pI = FindFirstObjectByType<PlayerInteraction>();
         NPCManager = FindFirstObjectByType<NPCManager>();
+        options.Add(ingredients);
+        options.Add(ingredients2);
+        options.Add(ingredients3);
     }
     public void OnInteract(string name)
     {
@@ -32,10 +35,12 @@ public class Interact : MonoBehaviour
             {
                     if (BakeryManager.instance.tasks == false)
                     {
-                        pI.tasks.setTask(task);
+                        
                         BakeryManager.instance.tasks = true;
                         BakeryManager.instance.npcPosition = new Vector3(-1.5f, 0f, 2.5f);
-                        BakeryManager.instance.NPCingredients = ingredients;
+                        int r = Random.Range(0, 3);
+                        BakeryManager.instance.NPCingredients = options[r];
+                        pI.tasks.setTask(task);
                     }
                     else
                     {
@@ -46,7 +51,7 @@ public class Interact : MonoBehaviour
                     }
                     break;
             }
-            case "Oven":
+            case "Table":
                 {
                     if (BakeryManager.instance.deliverTask)
                     {

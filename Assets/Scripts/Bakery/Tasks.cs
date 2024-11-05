@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tasks : MonoBehaviour
 {
-    [SerializeField] private TMP_Text txt;
+    [SerializeField] private Image img;
     [SerializeField] private TMP_Text scoreMessage;
+    [SerializeField] private TMP_Text count;
 
     private void Start()
     {
@@ -15,10 +17,21 @@ public class Tasks : MonoBehaviour
             setTask(BakeryManager.instance.lastTask);
         }
     }
-    public void setTask(string txt)
+    public void setTask(Sprite sprite)
     {
-        this.txt.text = "- " + txt;
-        BakeryManager.instance.lastTask = txt;
+        img.gameObject.SetActive(true);
+        this.img.sprite = sprite;
+        BakeryManager.instance.lastTask = sprite;
+
+        int x = 0;
+        for(int i = 0; i < BakeryManager.instance.NPCingredients.Count; i++)
+        {
+            if (BakeryManager.instance.NPCingredients[i].name == "Tentaculo")
+            {
+                x++;
+            }
+        }
+        count.text = x + "x";
     }
 
     public void endTask()
@@ -31,7 +44,7 @@ public class Tasks : MonoBehaviour
         scoreMessage.text = "Você completou esse pedido com " + BakeryManager.instance.score
             + " Pontos.";
         StartCoroutine(closeMessage());
-        setTask("");
+        img.gameObject.SetActive(false);
     }
 
     IEnumerator closeMessage()

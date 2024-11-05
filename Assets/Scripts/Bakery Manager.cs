@@ -9,7 +9,7 @@ public class BakeryManager : MonoBehaviour
 
     //Variaveis envolvendo os minigames
     public bool started = false;
-    public string lastTask = null;
+    public Sprite lastTask = null;
     public bool tasks;
     public int score;
     public bool deliverTask;
