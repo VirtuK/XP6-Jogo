@@ -18,13 +18,15 @@ public class PerfectBuildMinigame : MonoBehaviour
     private Vector2 spawnPosition = new Vector2(0, 4);
 
     private float speed = 4;
-    private float speedIncrease = 3f;
+    private float speedIncrease = 2f;
     private int direction = 1;
     private float Limit = 8;
     private bool canPlay;
     [SerializeField] private int count = 0;
     public int points;
     [SerializeField] private TMP_Text txt;
+    [SerializeField] private TMP_Text txt2;
+    private int listPoints = 0;
     private float time = 0;
     private bool timer;
 
@@ -39,11 +41,7 @@ public class PerfectBuildMinigame : MonoBehaviour
         {
             if (BakeryManager.instance.NPCingredients[i] == BakeryManager.instance.ingredients[i])
             {
-                points++;
-            }
-            else
-            {
-                points--;
+                listPoints++;
             }
         }
     }
@@ -59,16 +57,18 @@ public class PerfectBuildMinigame : MonoBehaviour
         if(time <= 0 && timer)
         {
             BakeryManager.instance.deliverTask = true;
-            BakeryManager.instance.score = points;
+            BakeryManager.instance.score = points + listPoints;
             SceneManager.LoadScene("SampleScene");
         }
 
 
         txt.text = "Pontos: " + points;
+        txt2.text = "Ingredientes escolhidos corretamente: " + listPoints;
         if (currentIngredient)
         {
             float movement = Time.deltaTime * speed * direction;
             currentIngredient.position += new Vector3(movement, 0, 0);
+            currentIngredient.GetComponent<Ingredients>().enabled = false;
             if (Mathf.Abs(currentIngredient.position.x) > Limit)
             {
                 currentIngredient.position = new Vector3(direction * Limit, currentIngredient.position.y, 0);
@@ -110,7 +110,7 @@ public class PerfectBuildMinigame : MonoBehaviour
         if(count >= BakeryManager.instance.ingredients.Count && !timer)
         {
             timer = true;
-            time = 5;
+            time = 2;
             print("end" + time);
             
         }
@@ -132,7 +132,7 @@ public class PerfectBuildMinigame : MonoBehaviour
         currentIngredient.transform.position = spawnPosition;
         currentRigidBody = currentIngredient.GetComponent<Rigidbody2D>();
         speed += speedIncrease;
-        baseObject.transform.localScale = new Vector3(baseObject.transform.localScale.x - 1.625f, 0.1f, 1);
+        baseObject.transform.localScale = new Vector3(baseObject.transform.localScale.x - 1.25f, 0.1f, 1);
 
     }
 }

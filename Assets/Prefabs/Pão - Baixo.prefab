@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5352378093575279693}
   - component: {fileID: 6028040159531172307}
   - component: {fileID: -4240975029059190180}
-  - component: {fileID: 3398539885704012748}
+  - component: {fileID: 1849856326065007864}
   m_Layer: 0
   m_Name: "P\xE3o - Baixo"
   m_TagString: Untagged
@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf398f6b09a053148a41c225d2354114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!60 &3398539885704012748
-PolygonCollider2D:
+--- !u!61 &1849856326065007864
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -162,7 +162,7 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.007829115, y: 0.00005327165}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -172,15 +172,5 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.20374306, y: 0.05156309}
-      - {x: -0.21870406, y: 0.05225162}
-      - {x: -0.23841116, y: 0.03125}
-      - {x: -0.2411325, y: -0.015625}
-      - {x: -0.20040362, y: -0.052251622}
-      - {x: 0.18947211, y: -0.05225163}
-      - {x: 0.2091792, y: -0.032762248}
-      - {x: 0.2264369, y: -0.013940589}
-      - {x: 0.22414684, y: 0.03696282}
-  m_UseDelaunayMesh: 0
+  m_Size: {x: 0.45338306, y: 0.09352869}
+  m_EdgeRadius: 0

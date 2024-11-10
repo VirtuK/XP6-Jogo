@@ -15,7 +15,7 @@ public class Ingredients : MonoBehaviour
 
     private void Update()
     {
-        transform.rotation = Quaternion.Lerp(this.gameObject.transform.rotation, cam.transform.rotation, 10 * Time.deltaTime);
+        transform.LookAt(cam.transform);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

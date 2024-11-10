@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
+using TMPro;
 using Unity.Jobs;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,10 +14,11 @@ public class NPCManager : MonoBehaviour
     [SerializeField] private GameObject npc = null;
     [SerializeField] private bool start;
     [SerializeField] private bool finish;
+    [SerializeField] private Tasks taskManager;
     public GameObject spawn;
     void Start()
     {
-       
+        taskManager = FindAnyObjectByType<Tasks>();
         randomizeNPC();
         
     }
@@ -47,5 +49,15 @@ public class NPCManager : MonoBehaviour
         }
         npc.name = "NPC";
         start = false;
+        setUI();
+    }
+
+    public void setUI()
+    {
+        taskManager.taskBallon = GameObject.FindWithTag("taskBallon");
+        taskManager.taskImage = GameObject.FindWithTag("taskImage");
+        taskManager.count = GameObject.FindWithTag("taskCount").GetComponent<TMP_Text>();
+        taskManager.img = taskManager.taskImage.GetComponent<SpriteRenderer>();
+        taskManager.taskBallon.SetActive(false);
     }
 }

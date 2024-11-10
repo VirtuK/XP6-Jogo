@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5352378093575279693}
   - component: {fileID: 6028040159531172307}
   - component: {fileID: -7019015762446765031}
-  - component: {fileID: 2750371661177917768}
+  - component: {fileID: 5510489621745590337}
   m_Layer: 0
   m_Name: "P\xE3o - Cima"
   m_TagString: Untagged
@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf398f6b09a053148a41c225d2354114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!60 &2750371661177917768
-PolygonCollider2D:
+--- !u!61 &5510489621745590337
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -162,7 +162,7 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.007721454, y: -0.00005092472}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -172,26 +172,5 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.21871185, y: 0.024131209}
-      - {x: 0.14980747, y: 0.085962966}
-      - {x: 0.11793019, y: 0.10208162}
-      - {x: 0.083208025, y: 0.12061059}
-      - {x: -0.09375, y: 0.11749899}
-      - {x: -0.1397787, y: 0.107655466}
-      - {x: -0.17676863, y: 0.08677762}
-      - {x: -0.24590096, y: 0.013905484}
-      - {x: -0.26711035, y: -0.020309955}
-      - {x: -0.262001, y: -0.07397944}
-      - {x: -0.21995327, y: -0.11942614}
-      - {x: -0.11998766, y: -0.11942615}
-      - {x: 0.010738976, y: -0.11913465}
-      - {x: 0.10059254, y: -0.11815467}
-      - {x: 0.19805443, y: -0.117091686}
-      - {x: 0.21019483, y: -0.10208164}
-      - {x: 0.22194667, y: -0.09129087}
-      - {x: 0.24264808, y: -0.07427066}
-      - {x: 0.24082425, y: -0.01771066}
-      - {x: 0.22497353, y: -0.007293362}
-  m_UseDelaunayMesh: 0
+  m_Size: {x: 0.48461533, y: 0.21876766}
+  m_EdgeRadius: 0

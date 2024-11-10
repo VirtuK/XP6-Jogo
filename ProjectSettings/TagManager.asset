@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ingredient
   - NPC
+  - taskBallon
+  - taskImage
+  - taskCount
   layers:
   - Default
   - TransparentFX
