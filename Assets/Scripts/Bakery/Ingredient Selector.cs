@@ -10,6 +10,7 @@ public class IngredientSelector : MonoBehaviour
     [SerializeField] private GameObject imagePrefab;
     [SerializeField] private GameObject canvas;
     private float yOffset = 720;
+    private float xOffset = 720;
 
     private void Start()
     {
@@ -29,12 +30,12 @@ public class IngredientSelector : MonoBehaviour
     {
         GameObject obj = Instantiate(spritePrefab);
         obj.transform.SetParent(canvas.transform, false);
-        obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y - yOffset, obj.transform.position.z);
+        obj.transform.position = new Vector3(obj.transform.position.x - xOffset, obj.transform.position.y - yOffset, obj.transform.position.z);
         GameObject img = Instantiate(imagePrefab);
         img.transform.SetParent(obj.transform, false);
         img.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z);
         img.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         img.GetComponent<Image>().sprite = ingredient;
-        yOffset -= 180;
+        xOffset -= 180;
     }
 }
