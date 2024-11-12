@@ -34,7 +34,7 @@ public class IngredientSelector : MonoBehaviour
         GameObject img = Instantiate(imagePrefab);
         img.transform.SetParent(obj.transform, false);
         img.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z);
-        img.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        img.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         img.GetComponent<Image>().sprite = ingredient;
         xOffset -= 180;
     }
